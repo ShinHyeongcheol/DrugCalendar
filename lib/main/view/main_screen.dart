@@ -1,8 +1,6 @@
 import 'package:drugcalendar/common/const/colors.dart';
-import 'package:drugcalendar/common/layout/default_layout.dart';
+import 'package:drugcalendar/record/view/record_main_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../common/layout/default_leading_layout.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,17 +12,38 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultLeadingLayout(
-      appbarTitle: const Text(
-        '3월',
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.w500,
-          color: Colors.white,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          '3월',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
         ),
+        leading: IconButton(
+          onPressed: () {
+            //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()),);
+          },
+          icon: const Icon(
+            Icons.account_circle,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const RecordScreen()),
+              );
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
-      appbarColor: PRIMATY_COLOR,
-      child: Column(
+      backgroundColor: PRIMATY_COLOR,
+      body: Column(
         children: [
           Container(),
         ],
