@@ -1,6 +1,6 @@
+import 'package:drugcalendar/common/const/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../const/colors.dart';
 
 class DefaultLayout extends StatelessWidget {
   final Widget child;

@@ -1,12 +1,11 @@
-import 'package:drugcalendar/common/component/custom_text_button_pop.dart';
 import 'package:drugcalendar/common/component/custom_text_button_push.dart';
 import 'package:drugcalendar/common/component/custom_text_form_filed.dart';
+import 'package:drugcalendar/common/const/colors.dart';
 import 'package:drugcalendar/common/layout/default_layout.dart';
+import 'package:drugcalendar/main/view/main_screen.dart';
 import 'package:drugcalendar/user/view/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/const/colors.dart';
-import '../../main/view/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -84,10 +83,10 @@ class SignupButton extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => SignupScreen()),
+          MaterialPageRoute(builder: (context) => const SignupScreen()),
         );
       },
-      child: Text(
+      child: const Text(
         '회원가입',
         style: TextStyle(
           fontSize: 15,

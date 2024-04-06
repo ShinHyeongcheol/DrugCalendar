@@ -1,9 +1,8 @@
+import 'package:drugcalendar/common/component/custom_text_button_pop.dart';
+import 'package:drugcalendar/common/component/custom_text_form_filed.dart';
 import 'package:drugcalendar/common/layout/default_layout.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/component/custom_text_button_pop.dart';
-import '../../common/component/custom_text_button_push.dart';
-import '../../common/component/custom_text_form_filed.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
