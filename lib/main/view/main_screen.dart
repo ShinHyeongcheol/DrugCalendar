@@ -1,5 +1,8 @@
 import 'package:drugcalendar/common/const/colors.dart';
-import 'package:drugcalendar/record/view/record_main_screen.dart';
+import 'package:drugcalendar/main/view/main_calendar.dart';
+import 'package:drugcalendar/main/view/main_dialog.dart';
+import 'package:drugcalendar/main/view/main_drug_list.dart';
+import 'package:drugcalendar/profile/view/profile_main_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,9 +25,14 @@ class _MainScreenState extends State<MainScreen> {
             color: Colors.white,
           ),
         ),
+        centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()),);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ProfileScreen()),
+            );
           },
           icon: const Icon(
             Icons.account_circle,
@@ -33,19 +41,27 @@ class _MainScreenState extends State<MainScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const RecordScreen()),
-              );
+              showDialog(
+                context: context,
+                barrierDismissible: true,
+                builder: (context) {
+                  return const MainDialog();
+                },
+              ).then((value) {
+                //pop시에 return
+              }).whenComplete(() {
+                // 다이얼로그 종료시 호출
+              });
             },
             icon: const Icon(Icons.add),
           ),
         ],
+        backgroundColor: PRIMATY_COLOR,
       ),
-      backgroundColor: PRIMATY_COLOR,
-      body: Column(
+      body: const Column(
         children: [
-          Container(),
+          MainCalendar(),
+          MainDrugList(),
         ],
       ),
     );

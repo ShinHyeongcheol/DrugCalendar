@@ -11,6 +11,7 @@ class CustomTextButtonPush extends StatelessWidget {
   final double buttonHeight;
   final double buttonBorder;
   final bool buttonNavigateRemove;
+  final bool buttonNavigatePop;
 
   const CustomTextButtonPush(
       {this.buttonText = 'test',
@@ -19,6 +20,7 @@ class CustomTextButtonPush extends StatelessWidget {
       this.buttonHeight = 40,
       this.buttonBorder = 15,
       this.buttonNavigateRemove = false,
+      this.buttonNavigatePop = false,
       super.key});
 
   @override
@@ -40,6 +42,9 @@ class CustomTextButtonPush extends StatelessWidget {
       onPressed: () {
         if (buttonNavigateRemove) {
           Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+        }
+        if(buttonNavigatePop){
+          Navigator.pop(context);
         }
         Navigator.push(
           context,

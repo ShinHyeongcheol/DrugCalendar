@@ -1,3 +1,5 @@
+import 'package:drugcalendar/main/view/main_screen.dart';
+import 'package:drugcalendar/record/view/record_main_screen.dart';
 import 'package:drugcalendar/user/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
